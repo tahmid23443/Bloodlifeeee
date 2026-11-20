@@ -32,6 +32,7 @@ export interface UserProfile {
   requests_count: number;
   vehicle_type: string | null;
   hospital_name: string | null;
+  nid?: string | null;
   created_at: string;
   inventory?: Record<BloodType, number>;
 }

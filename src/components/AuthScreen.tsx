@@ -66,6 +66,7 @@ export function AuthScreen({ onAuthenticated }: AuthScreenProps) {
   const [gpsCoords, setGpsCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [gpsLoading, setGpsLoading] = useState(false);
   const [hospitalName, setHospitalName] = useState('');
+  const [nid, setNid] = useState('');
   const [vehicleType, setVehicleType] = useState('Cold-Box Motorcycle');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -129,6 +130,7 @@ export function AuthScreen({ onAuthenticated }: AuthScreenProps) {
               ? hospitalName || name
               : undefined,
           vehicle_type: selectedRole === 'rider' ? vehicleType : undefined,
+          nid,
         });
         onAuthenticated(user);
       }
@@ -247,21 +249,38 @@ export function AuthScreen({ onAuthenticated }: AuthScreenProps) {
             )}
 
             {mode === 'signup' && (
-              <div>
-                <label htmlFor="auth-name" className="block text-xs font-semibold text-neutral-700 mb-1">
-                  {selectedRole === 'hospital' || selectedRole === 'government'
-                    ? 'Officer / Admin Name'
-                    : 'Full Name'}
-                </label>
-                <input
-                  id="auth-name"
-                  type="text"
-                  required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Ayesha Rahman"
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#F6F6F8] border border-transparent focus:border-[#DC1423] focus:bg-white text-sm focus:outline-none"
-                />
+              <div className="space-y-3.5">
+                <div>
+                  <label htmlFor="auth-name" className="block text-xs font-semibold text-neutral-700 mb-1">
+                    {selectedRole === 'hospital' || selectedRole === 'government'
+                      ? 'Officer / Admin Name (as per NID)'
+                      : 'Full Name (as per NID)'}
+                  </label>
+                  <input
+                    id="auth-name"
+                    type="text"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="e.g. Ayesha Rahman"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F6F6F8] border border-transparent focus:border-[#DC1423] focus:bg-white text-sm focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="auth-nid" className="block text-xs font-semibold text-neutral-700 mb-1">
+                    NID / Birth Registration Number
+                  </label>
+                  <input
+                    id="auth-nid"
+                    type="text"
+                    required
+                    value={nid}
+                    onChange={(e) => setNid(e.target.value)}
+                    placeholder="e.g. 199856789012345"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F6F6F8] border border-transparent focus:border-[#DC1423] focus:bg-white text-sm focus:outline-none"
+                  />
+                </div>
               </div>
             )}
 

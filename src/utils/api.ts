@@ -378,6 +378,7 @@ export const api = {
     lng?: number;
     vehicle_type?: string;
     hospital_name?: string;
+    nid?: string;
   }) => {
     await simulateDelay();
     const users = getUsers();
@@ -400,6 +401,7 @@ export const api = {
       requests_count: 0,
       vehicle_type: payload.vehicle_type || null,
       hospital_name: payload.hospital_name || null,
+      nid: payload.nid || null,
       created_at: new Date().toISOString(),
       ...(payload.role === 'hospital'
         ? {
