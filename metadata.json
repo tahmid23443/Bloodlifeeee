@@ -1,0 +1,6 @@
+{
+  "name": "PulseDrop — Real-Time Blood Dispatch",
+  "description": "Minimal red and white Uber-style blood donor, needer, rider, and hospital dispatch platform with real-time Leaflet tracking, direct chat, and SQLite persistence.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

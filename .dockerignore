@@ -1,0 +1,7 @@
+node_modules
+dist
+.playwright-cli
+bloodline.db
+bloodline.db-shm
+bloodline.db-wal
+.env
