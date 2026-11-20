@@ -137,24 +137,24 @@ export function AiAssistantModal({ currentUser, isOpen, onClose }: AiAssistantMo
         <div className="px-4 py-2 bg-white border-t border-neutral-100 flex gap-1.5 overflow-x-auto no-scrollbar shrink-0">
           <button
             type="button"
-            onClick={() => setInput('Where can I find O+ blood stock right now?')}
+            onClick={() => setInput('How does donor searching and hospital inventory matching work?')}
             className="text-[11px] px-3 py-1.5 bg-red-50 hover:bg-red-100 text-[#DC1423] rounded-full border border-red-200 font-medium whitespace-nowrap transition-colors"
           >
-            🩸 Find O+ Blood Stock
+            🔍 Donor Searching & Stock
           </button>
           <button
             type="button"
-            onClick={() => setInput('How do I register for Government Tika Care?')}
+            onClick={() => setInput('How does cold-box rider dispatch and live tracking work?')}
             className="text-[11px] px-3 py-1.5 bg-red-50 hover:bg-red-100 text-[#DC1423] rounded-full border border-red-200 font-medium whitespace-nowrap transition-colors"
           >
-            🛡️ Tika Care Registration
+            🏍️ Rider Matching & GPS
           </button>
           <button
             type="button"
-            onClick={() => setInput('What are the safe blood donation guidelines?')}
+            onClick={() => setInput('How does Government Tika Care and digital QR card work?')}
             className="text-[11px] px-3 py-1.5 bg-red-50 hover:bg-red-100 text-[#DC1423] rounded-full border border-red-200 font-medium whitespace-nowrap transition-colors"
           >
-            📋 Donor Safety Rules
+            🛡️ Govt Tika Care QR
           </button>
         </div>
 
